@@ -44,6 +44,7 @@ public class ButtonController : MonoBehaviour{
     
     public void setColorBlindness() {
 
+        StringCAPTCHA captcha = new StringCAPTCHA();
         // Get the button text from the button
         TMPro.TextMeshProUGUI textBox = GetComponentInChildren<TMPro.TextMeshProUGUI>();
         // Get the next ColorBlindnessType
@@ -51,6 +52,7 @@ public class ButtonController : MonoBehaviour{
         // Set the text and the value of camera
         camera.Type = (int)newType;
         textBox.text = newType.ToString();
+        textBox.text = textBox.text.AddColor(ColorPalettes.Tritanopia.colors[0]);
     }
 
 }
