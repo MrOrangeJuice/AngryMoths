@@ -9,9 +9,6 @@ public class ImageHandler : MonoBehaviour
     public Image image2;
     public Image image3;
 
- /*   public bool changeImage;
-    public bool goToImage2 = false;
-    public bool goToImage3 = false;
     // Start is called before the first frame update*/
     void Start()
     {
@@ -19,9 +16,13 @@ public class ImageHandler : MonoBehaviour
     }
     IEnumerator Wait()
     {
+        //wait for 2 seconds before going to next image
         yield return new WaitForSeconds(2);
+        //fade the first image
         StartCoroutine(FadeImage(image1));
+        //first image takes 3 seconds to fade plus we need to wait for 2 seconds before we go to third image
         yield return new WaitForSeconds(5);
+        //fade the second image
         StartCoroutine(FadeImage(image2));
     }
 
@@ -40,7 +41,7 @@ public class ImageHandler : MonoBehaviour
     }
 
         // Update is called once per frame
-        void Update()
+    void Update()
     {
   
     }
