@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     public bool timerGoing;
     private float nextActionTime = 1.0f;
     public float period = 1.0f;
+    public bool counting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,10 @@ public class Timer : MonoBehaviour
         if (Time.time > nextActionTime)
         {
             nextActionTime += period;
-            slider.value--;
+            if(counting)
+            {
+                slider.value--;
+            }
         }
     }
 
@@ -47,5 +51,17 @@ public class Timer : MonoBehaviour
     public void SetTime(int time)
     {
         slider.value = time;
+    }
+
+    public void SetCounter()
+    {
+        if(counting)
+        {
+            counting = false;
+        }
+        else if(!counting)
+        {
+            counting = true;
+        }
     }
 }
