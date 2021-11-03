@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class ImageHandler : MonoBehaviour
 {
     public Image image1;
@@ -24,6 +24,10 @@ public class ImageHandler : MonoBehaviour
         yield return new WaitForSeconds(5);
         //fade the second image
         StartCoroutine(FadeImage(image2));
+        //wait on image 3 for sometime
+        yield return new WaitForSeconds(7);
+        //load the scene containing first puzzle
+        SceneManager.LoadScene("LoginScene");
     }
 
     IEnumerator FadeImage(Image img)
