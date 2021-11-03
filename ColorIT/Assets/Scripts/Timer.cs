@@ -7,7 +7,12 @@ public class Timer : MonoBehaviour
 {
 
     public Slider slider;
+    public HealthBar healthbar;
     public bool timerGoing;
+    private float nextActionTime = 1.0f;
+    public float period = 1.0f;
+    public bool counting = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +22,19 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(slider.value <= 0)
+        {
+            healthbar.DecreaseHealth(10);
+            slider.value = slider.maxValue;
+        }
+        if (Time.time > nextActionTime)
+        {
+            nextActionTime += period;
+            if(counting)
+            {
+                slider.value--;
+            }
+        }
     }
 
     public void StartStopTimer(bool timerStartStop)
@@ -34,5 +51,17 @@ public class Timer : MonoBehaviour
     public void SetTime(int time)
     {
         slider.value = time;
+    }
+
+    public void SetCounter()
+    {
+        if(counting)
+        {
+            counting = false;
+        }
+        else if(!counting)
+        {
+            counting = true;
+        }
     }
 }
