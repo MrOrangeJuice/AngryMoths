@@ -19,7 +19,7 @@ public class HealthControlTest : MonoBehaviour
         // Start and stop timer
         if(Input.GetKeyDown("space"))
         {
-            timer.SetCounter();
+           // timer.SetCounter();
         }
 
         if(Input.GetKeyDown("r"))
