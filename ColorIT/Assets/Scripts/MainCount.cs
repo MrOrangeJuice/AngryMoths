@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCount : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class MainCount : MonoBehaviour
         if(onCount == switchCount)
         {
             winText.SetActive(true);
+            SceneManager.LoadScene("Game");
         }
     }
 }
