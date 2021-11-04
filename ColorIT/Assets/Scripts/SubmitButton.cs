@@ -8,6 +8,8 @@ public class SubmitButton : MonoBehaviour
 {
     public Button submitButton;
     public Canvas canvas;
+    public GameObject captcha;
+    public Timer timer;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class SubmitButton : MonoBehaviour
     void ProgressToNextScene()
     {
         canvas.GetComponent<Canvas>().enabled = false;
+
+        Destroy(captcha);
         SceneManager.LoadScene("Wire_Game_Scene", LoadSceneMode.Additive);
     }
 }
