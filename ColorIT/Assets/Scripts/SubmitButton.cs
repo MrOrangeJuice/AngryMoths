@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class SubmitButton : MonoBehaviour
 {
     public Button submitButton;
+    public Canvas canvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class SubmitButton : MonoBehaviour
 
     void ProgressToNextScene()
     {
+        canvas.GetComponent<Canvas>().enabled = false;
         SceneManager.LoadScene("Wire_Game_Scene", LoadSceneMode.Additive);
     }
 }

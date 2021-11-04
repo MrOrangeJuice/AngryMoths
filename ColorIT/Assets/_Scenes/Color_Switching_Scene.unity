@@ -1686,6 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   submitButton: {fileID: 1919282661}
+  canvas: {fileID: 1117689604}
 --- !u!114 &1919282661
 MonoBehaviour:
   m_ObjectHideFlags: 0
