@@ -59,6 +59,10 @@ public class StringCAPTCHA {
     private int CHAR_END = 70;
     public readonly ColorBlindnessType[] colorBlindnessTypes = new ColorBlindnessType[6];
 
+    public string getString() {
+        return new string(characters);
+    }
+
     public void generateNewString() {
         System.Random rnd = new System.Random();
 

@@ -6,7 +6,7 @@ public class CAPTCHARenderer : MonoBehaviour
 {
     public Sprite[] characterSpriteArray;
     public Sprite[] backgroundSpriteArray;
-    private StringCAPTCHA captcha = new StringCAPTCHA();
+    public readonly StringCAPTCHA captcha = new StringCAPTCHA();
     private ColorBlindnessType savedBlindnessType = ColorBlindnessType.Normal;
 
     private int GetCharacterSpriteInArray(char character,ColorBlindnessType type,int offset = 0){
@@ -27,7 +27,7 @@ public class CAPTCHARenderer : MonoBehaviour
         savedBlindnessType = renderBlindness;
         Transform[] allChildren = GetComponentsInChildren<Transform>();
         foreach (Transform child in allChildren) {
-            Debug.Log(child.gameObject.name);
+            // Debug.Log(child.gameObject.name);
             switch (child.gameObject.name[0]) {
                 case 'A':
                     {
