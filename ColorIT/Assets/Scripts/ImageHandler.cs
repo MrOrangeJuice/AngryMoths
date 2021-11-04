@@ -27,7 +27,7 @@ public class ImageHandler : MonoBehaviour
         //wait on image 3 for sometime
         yield return new WaitForSeconds(7);
         //load the scene containing first puzzle
-        SceneManager.LoadScene("LoginScene");
+        SceneManager.LoadScene("Color_Switching_Scene");
     }
 
     IEnumerator FadeImage(Image img)
