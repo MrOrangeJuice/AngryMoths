@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class TSS_Button1Controller : MonoBehaviour
+public class Next_Scene_button : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,8 +16,8 @@ public class TSS_Button1Controller : MonoBehaviour
         
     }
 
-    public void ButtonOnClick() {
+    void OnMouseDown()
+    {
         SceneManager.LoadScene("Color_Switching_Scene");
-
     }
 }

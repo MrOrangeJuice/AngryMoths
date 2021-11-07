@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TSS_Button2Controller : MonoBehaviour
+public class tssb1 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,7 +16,8 @@ public class TSS_Button2Controller : MonoBehaviour
     {
         
     }
-    public void ButtonOnClick() {
-        SceneManager.LoadScene("Wire_Game_Scene");
+
+    public void btnOnClick() {
+        SceneManager.LoadScene("Tutorial_OSLoad");
     }
 }

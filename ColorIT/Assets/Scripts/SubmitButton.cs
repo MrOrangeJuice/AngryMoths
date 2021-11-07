@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SubmitButton : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class SubmitButton : MonoBehaviour
     public Canvas canvas;
     public GameObject captcha;
     public Timer timer;
+    public GameObject[] otherObjects;
+    public CAPTCHARenderer cAPTCHARenderer;
+    public GameObject inputField;
+    public GameObject wrongWindow;
+    public GameObject[] disabledObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,9 +32,28 @@ public class SubmitButton : MonoBehaviour
 
     void ProgressToNextScene()
     {
-        canvas.GetComponent<Canvas>().enabled = false;
+        string text = inputField.GetComponent<TMP_InputField>().text;
+        string code = cAPTCHARenderer.captcha.getString();
+        Debug.Log(text);
+        if (text.ToUpper() == code.ToUpper())
+        {
+            foreach (GameObject gameObject in otherObjects)
+            {
+                gameObject.SetActive(false);
+            }
 
-        Destroy(captcha);
-        SceneManager.LoadScene("Wire_Game_Scene", LoadSceneMode.Additive);
+            canvas.GetComponent<Canvas>().enabled = false;
+
+            Destroy(captcha);
+            SceneManager.LoadScene("Wire_Game_Scene", LoadSceneMode.Additive);
+        }
+        else {
+            wrongWindow.SetActive(true);
+            foreach (GameObject window in disabledObjects) {
+                window.SetActive(false);
+            }
+        }
+
+
     }
 }

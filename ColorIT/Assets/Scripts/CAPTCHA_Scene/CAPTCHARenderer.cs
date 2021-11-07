@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Wilberforce;
 public class CAPTCHARenderer : MonoBehaviour
 {
     public Sprite[] characterSpriteArray;
     public Sprite[] backgroundSpriteArray;
     public readonly StringCAPTCHA captcha = new StringCAPTCHA();
+    public Colorblind camera;
     private ColorBlindnessType savedBlindnessType = ColorBlindnessType.Normal;
 
     private int GetCharacterSpriteInArray(char character,ColorBlindnessType type,int offset = 0){
@@ -67,6 +68,8 @@ public class CAPTCHARenderer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        savedBlindnessType = (ColorBlindnessType)camera.Type;
+        ResetCaptcha();
         
     }
 

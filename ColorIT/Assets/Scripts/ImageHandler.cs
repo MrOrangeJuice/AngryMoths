@@ -8,7 +8,7 @@ public class ImageHandler : MonoBehaviour
     public Image image1;
     public Image image2;
     public Image image3;
-
+    public GameObject startup;
     // Start is called before the first frame update*/
     void Start()
     {
@@ -25,9 +25,11 @@ public class ImageHandler : MonoBehaviour
         //fade the second image
         StartCoroutine(FadeImage(image2));
         //wait on image 3 for sometime
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(5);
+        startup.SetActive(true);
+        yield return new WaitForSeconds(2);
         //load the scene containing first puzzle
-        SceneManager.LoadScene("Color_Switching_Scene");
+        SceneManager.LoadScene("Tutorial_OSLoad");
     }
 
     IEnumerator FadeImage(Image img)
