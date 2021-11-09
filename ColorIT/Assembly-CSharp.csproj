@@ -53,6 +53,7 @@
     <UnityVersion>2021.2.1f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Destroy.cs" />
     <Compile Include="Assets/Scripts/Tutorial/LoadingProgressBar.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SkewTextExample.cs" />
