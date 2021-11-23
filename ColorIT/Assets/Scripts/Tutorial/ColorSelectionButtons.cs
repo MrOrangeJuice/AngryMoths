@@ -16,12 +16,27 @@ public class ColorSelectionButtons : MonoBehaviour
     public GameObject FailWindow;
     public GameObject SuccessfulWindow;
     public GameObject [] otherWindows;
+    public Texture2D cursor;
+
+    public Sprite[] attemptsHint;
+    public GameObject attempts;
+
     // Start is called before the first frame update
 
     void Start()
     {
         RefreshSprite();
- 
+
+    }
+
+    void OnMouseEnter()
+    {
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+    }
+
+    void OnMouseExit()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     void OnMouseDown()
@@ -50,11 +65,18 @@ public class ColorSelectionButtons : MonoBehaviour
         else {
             Debug.Log("Wrong");
             ColorSelectionPicker.attempts--;
-            if (ColorSelectionPicker.attempts == 0) {
-
+            if (ColorSelectionPicker.attempts == 0)
+            {
+                SpriteRenderer renderer = attempts.GetComponent<SpriteRenderer>();
+                renderer.sprite = attemptsHint[2];
                 // Fail
                 FailWindow.SetActive(true);
                 ADOSWindow.SetActive(false);
+
+            }
+            else {
+                SpriteRenderer renderer = attempts.GetComponent<SpriteRenderer>();
+                renderer.sprite = attemptsHint[ColorSelectionPicker.attempts-1];
             }
         }
     }

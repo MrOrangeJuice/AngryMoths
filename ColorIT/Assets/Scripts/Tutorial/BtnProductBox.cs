@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloseButtonWI : MonoBehaviour
+public class BtnProductBox : MonoBehaviour
 {
-    public GameObject window;
+
+    public GameObject [] windows;
     public Texture2D cursor;
-    public GameObject[] otherButtons;
+    public GameObject[] otherObjects;
 
     void OnMouseEnter()
     {
@@ -17,18 +18,21 @@ public class CloseButtonWI : MonoBehaviour
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
+
     void OnMouseDown()
     {
-        foreach (GameObject button in otherButtons)
+        foreach (GameObject window in windows)
         {
-            button.SetActive(true);
+            window.SetActive(true);
         }
-        window.SetActive(false);
-        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-    }
 
-    // Start is called before the first frame update
-    void Start()
+        foreach (GameObject button in otherObjects)
+        {
+            button.SetActive(false);
+        }
+    }
+        // Start is called before the first frame update
+        void Start()
     {
         
     }

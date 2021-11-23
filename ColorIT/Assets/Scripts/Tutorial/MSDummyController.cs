@@ -77,11 +77,11 @@ public class MSDummyController : MonoBehaviour
             }
             if (frameCount == 270)
             {
-                iconArray[0].SetActive(true);
+                iconArray[1].SetActive(true);
             }
             if (frameCount == 290)
             {
-                iconArray[1].SetActive(true);
+                iconArray[0].SetActive(true);
             }
             if (frameCount == 310)
             {
