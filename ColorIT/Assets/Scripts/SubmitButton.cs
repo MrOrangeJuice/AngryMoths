@@ -45,7 +45,7 @@ public class SubmitButton : MonoBehaviour
             canvas.GetComponent<Canvas>().enabled = false;
 
             Destroy(captcha);
-            SceneManager.LoadScene("Wire_Game_Scene", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Game");
         }
         else {
             wrongWindow.SetActive(true);

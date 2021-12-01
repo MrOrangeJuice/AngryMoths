@@ -5,6 +5,7 @@ using UnityEngine;
 public class CloseButtonWI : MonoBehaviour
 {
     public GameObject window;
+    public GameObject [] windows;
     public Texture2D cursor;
     public GameObject[] otherButtons;
 
@@ -24,7 +25,15 @@ public class CloseButtonWI : MonoBehaviour
             button.SetActive(true);
         }
         window.SetActive(false);
+
+
+
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+
+        foreach (GameObject gameObject in windows)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Start is called before the first frame update

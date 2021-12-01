@@ -18,6 +18,6 @@ public class Next_Scene_button : MonoBehaviour
 
     void OnMouseDown()
     {
-        SceneManager.LoadScene("Color_Switching_Scene");
+        SceneManager.LoadScene("CAPTCHA_LOGIN");
     }
 }

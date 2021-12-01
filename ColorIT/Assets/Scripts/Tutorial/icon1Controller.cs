@@ -25,6 +25,7 @@ public class icon1Controller : MonoBehaviour
     float clickdelay = 0.7f;
 
     public GameObject window;
+    public GameObject [] windows;
 
     private void OnMouseDown()
     {
@@ -40,10 +41,16 @@ public class icon1Controller : MonoBehaviour
             float currentTime = Time.time;
             if (currentTime - clicktime < clickdelay){
                 // Double Click Detected
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
                 window.SetActive(true);
                 foreach (GameObject button in otherButtons) {
                     button.SetActive(false);
                 }
+
+                foreach (GameObject gameObject in windows) {
+                    gameObject.SetActive(true);
+                }
+
             }
             clicktime = Time.time;
         }        

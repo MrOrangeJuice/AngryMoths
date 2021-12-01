@@ -87,7 +87,9 @@ public class MSDummyController : MonoBehaviour
             }
             if (frameCount == 310)
             {
-                iconArray[2].SetActive(true);
+                if (iconArray.Length >= 3) {
+                    iconArray[2].SetActive(true);
+                }
             }
             frameCount++;
         }
