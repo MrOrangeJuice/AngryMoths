@@ -21,6 +21,9 @@ public class BlindnessChangerSet : MonoBehaviour
             {
                 child.gameObject.SetActive(showNormal);
             }
+
+            // SetActive == false to remove the buttons on the side of the screen but without deleteing them
+            child.gameObject.SetActive(false);
         }
     }
 }
