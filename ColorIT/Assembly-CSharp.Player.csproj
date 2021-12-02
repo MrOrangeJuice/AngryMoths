@@ -69,6 +69,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_DigitValidator.cs" />
     <Compile Include="Assets/Scripts/Tutorial/BtnProductBox.cs" />
     <Compile Include="Assets/Scripts/Tutorial/MSDummyController.cs" />
+    <Compile Include="Assets/Scripts/Buttons/JigsawSuccessButton.cs" />
     <Compile Include="Assets/Colorblind Effect/Assets/Scripts/Colorblind.cs" />
     <Compile Include="Assets/Scripts/BlindnessChangerSet/BlindnessChangerN.cs" />
     <Compile Include="Assets/Scripts/CAPTCHA_Scene/CAPTCHARenderer.cs" />
@@ -81,11 +82,13 @@
     <Compile Include="Assets/Scripts/RandomizeChildern.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01_UGUI.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
+    <Compile Include="Assets/Scripts/Buttons/MailButton.cs" />
     <Compile Include="Assets/Scripts/menuScript_.cs" />
     <Compile Include="Assets/Scripts/Tutorial/Next_Scene_button.cs" />
     <Compile Include="Assets/Scripts/HealthControlTest.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
     <Compile Include="Assets/Scripts/CAPTCHA_Scene/BtnCaptchaRefresher.cs" />
+    <Compile Include="Assets/Scripts/SubmitButtonFailed.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/Timer.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_B.cs" />
     <Compile Include="Assets/Scripts/BlindnessChangerSet/BlindnessChangerT.cs" />
     <Compile Include="Assets/Scripts/LogInScene/ProtanopiaButton.cs" />
+    <Compile Include="Assets/Scripts/Buttons/LoginLinkButton.cs" />
     <Compile Include="Assets/Scripts/Tutorial/ColorSelectionButtons.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" />
