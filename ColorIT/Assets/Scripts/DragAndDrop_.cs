@@ -9,6 +9,7 @@ public class DragAndDrop_ : MonoBehaviour
     public GameObject EndMenu;
     public GameObject SelectedPiece;
     public GameObject winText;
+    public GameObject successScreen;
     int OIL = 1;    
     public int PlacedPieces = 0;
 
@@ -54,7 +55,8 @@ public class DragAndDrop_ : MonoBehaviour
         }             
         if (PlacedPieces == 36)
         {
-            winText.SetActive(true);
+            //winText.SetActive(true);
+            successScreen.SetActive(true);
         }
     }
 }
