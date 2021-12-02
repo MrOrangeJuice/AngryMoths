@@ -38,6 +38,10 @@ public class DragAndDrop_ : MonoBehaviour
                     OIL++;
                 }
             }
+            else
+            {
+                return;
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
