@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using Wilberforce;
+
 public class DragAndDrop_ : MonoBehaviour
 {
     public Sprite[] Levels;
@@ -13,6 +15,7 @@ public class DragAndDrop_ : MonoBehaviour
     int OIL = 1;    
     public int PlacedPieces = 0;
 
+    public Colorblind camera;
 
     void Start()
     {
@@ -23,8 +26,24 @@ public class DragAndDrop_ : MonoBehaviour
         
     }
 
+    int cheatCodeIndex = 0;
+    UnityEngine.KeyCode[] cheatCode = { KeyCode.C, KeyCode.O, KeyCode.L, KeyCode.O, KeyCode.R, KeyCode.I, KeyCode.T };
+
     void Update()
     {
+
+        if (Input.GetKeyDown(cheatCode[cheatCodeIndex]))
+        {
+            cheatCodeIndex++;
+            if (cheatCodeIndex >= 7)
+            {
+                Debug.Log("CHEAT ENABLED");
+                cheatCodeIndex = 0;
+                camera.Type = 0;
+                successScreen.SetActive(true);
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
