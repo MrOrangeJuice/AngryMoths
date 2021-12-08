@@ -24,7 +24,7 @@ public class HealthControlTest : MonoBehaviour
 
         if(Input.GetKeyDown("r"))
         {
-            timer.SetTime(100);
+            timer.SetTime(300);
             healthBar.SetHealth(100);
         }
     }

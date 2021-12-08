@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 71451988}
   - component: {fileID: 71451987}
   - component: {fileID: 71451991}
-  - component: {fileID: 71451990}
+  - component: {fileID: 71451992}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -209,19 +209,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &71451990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71451986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd245a918812e244599ffbdd9db015b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 1920629499}
 --- !u!114 &71451991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +223,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 1
   colorblindShader: {fileID: 4800000, guid: b35b8f7ae8cf168488129d5f5f39ebf4, type: 3}
+--- !u!114 &71451992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71451986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31369ab389b2047418bc8b4242be9b97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1884327878}
+  timer: {fileID: 591470185}
 --- !u!1001 &75953302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3420,17 +3421,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1920629499 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8705435837682830025, guid: 8d232fc765b0d4d4ca8800f1db3620ab, type: 3}
-  m_PrefabInstance: {fileID: 2045593111}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1945621444
 GameObject:
   m_ObjectHideFlags: 0
@@ -4054,6 +4044,14 @@ PrefabInstance:
     - target: {fileID: 8705435837232482574, guid: 8d232fc765b0d4d4ca8800f1db3620ab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705435837682830025, guid: 8d232fc765b0d4d4ca8800f1db3620ab, type: 3}
+      propertyPath: m_Value
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8705435837682830025, guid: 8d232fc765b0d4d4ca8800f1db3620ab, type: 3}
+      propertyPath: m_MaxValue
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8705435837682830028, guid: 8d232fc765b0d4d4ca8800f1db3620ab, type: 3}
       propertyPath: m_Name

@@ -49,6 +49,8 @@ public class SubmitButton : MonoBehaviour
 
             Destroy(captcha);
             SceneManager.LoadScene("Game");
+            timer.SetTime(1000);
+            //healthbar.DecreaseHealth(-10);
         }
         else {
             wrongWindow.SetActive(true);

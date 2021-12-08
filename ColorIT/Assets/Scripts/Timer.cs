@@ -25,8 +25,11 @@ public class Timer : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Game")
         {
-            //nextActionTime = 10.0f;
-            period = 1.5f;
+            SetMaxTime(1000);
+        }
+        else
+        {
+            SetMaxTime(300);
         }
         if(slider.value <= 0)
         {
@@ -51,7 +54,7 @@ public class Timer : MonoBehaviour
     public void SetMaxTime(int max)
     {
         slider.maxValue = max;
-        slider.value = max;
+        //slider.value = max;
     }
 
     public void SetTime(int time)

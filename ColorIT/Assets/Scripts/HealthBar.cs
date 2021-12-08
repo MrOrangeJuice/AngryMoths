@@ -13,6 +13,14 @@ public class HealthBar : MonoBehaviour
 
     }
 
+    void OnGUI()
+    {
+        if (slider.value <= 100)
+        {
+            GUI.Label(new Rect(10, 10, 100, 20), "You got too frustrated. Press R to Try Again");
+        }
+    }
+
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;
