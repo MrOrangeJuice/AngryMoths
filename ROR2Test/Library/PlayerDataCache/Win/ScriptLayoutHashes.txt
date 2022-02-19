@@ -1,0 +1,20 @@
+Win
+PlayerPath?
+C:/Users/parro/Documents/GitHub/AngryMoths/ROR2Test/ThunderKit/AssetBundleStaging/test.ros
+SceneListBegin?
+Assets/Scenes/Test.unity
+SceneListEnd?
+eafb77726b67b7571818a7210a3ce11e UnityEngine.Networking.dll:UnityEngine.Networking.NetworkIdentity
+d01cc68b5e4c117f21d11eaec11beef6 Assembly-CSharp.dll:RoR2.ClassicStageInfo
+290b38e3bf9a9530002ca587adf04e3d Assembly-CSharp.dll:RoR2.CombatDirector
+99fe1ca857eebcaa1ade255697a7b753 Assembly-CSharp.dll:RoR2.DirectorCardCategorySelection
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:RoR2.DirectorCore
+c89e5266e0e7b62eb207207a334f9487 Assembly-CSharp.dll:RoR2.Navigation.NodeGraph
+c652cce6ade2356386f34b437d4bdf1e Assembly-CSharp.dll:RoR2.SceneDirector
+cd2066ba803500019c15cb024e2701d7 Assembly-CSharp.dll:RoR2.SurfaceDef
+e39b7a15ebf9e442c68805be58c6c646 Assembly-CSharp.dll:RoR2.SurfaceDefProvider
+d5630f96bd5a6a6eed7e1754c3fb8703 Unity.Postprocessing.Runtime.dll:UnityEngine.Rendering.PostProcessing.PostProcessVolume
+a80b14bbf82e09e68bcc40555bf99005 RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.CharacterSpawnCard
+3076035d801595c2a3237689eb6b70e5 RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.GlobalEventManager
+1ecbd3949793fadeb9f2895a8920db1f RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.InteractableSpawnCard
+a358b43ebdf6904c657183138d31279e RainOfStages.Plugin.dll:PassivePicasso.RainOfStages.Proxy.SceneInfo
