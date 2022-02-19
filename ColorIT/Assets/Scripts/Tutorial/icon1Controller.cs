@@ -12,7 +12,7 @@ public class icon1Controller : MonoBehaviour
 
     void OnMouseEnter()
     {
-        //Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
     }
 
     void OnMouseExit()
@@ -25,6 +25,7 @@ public class icon1Controller : MonoBehaviour
     float clickdelay = 0.7f;
 
     public GameObject window;
+    public GameObject [] windows;
 
     private void OnMouseDown()
     {
@@ -32,20 +33,27 @@ public class icon1Controller : MonoBehaviour
         selectionArray[1].SetActive(true);
         selectionArray[2].SetActive(false);
 
-        clicked++;
-        if (clicked == 1) clicktime = Time.time;
 
-        if (clicked > 1 && Time.time - clicktime < clickdelay)
-        {
-            clicked = 0;
-            clicktime = 0;
-            window.SetActive(true);
-            foreach (GameObject button in otherButtons) {
-                button.SetActive(false);
+        if (clicked == 0){
+            clicked++;
+            clicktime = Time.time;
+        }else{
+            float currentTime = Time.time;
+            if (currentTime - clicktime < clickdelay){
+                // Double Click Detected
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                window.SetActive(true);
+                foreach (GameObject button in otherButtons) {
+                    button.SetActive(false);
+                }
+
+                foreach (GameObject gameObject in windows) {
+                    gameObject.SetActive(true);
+                }
+
             }
-
-        }
-        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
+            clicktime = Time.time;
+        }        
     }
 
 

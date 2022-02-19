@@ -10,7 +10,7 @@ public class icon2Controller : MonoBehaviour
 
     void OnMouseEnter()
     {
-        //Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
+        Cursor.SetCursor(cursor, Vector2.zero, CursorMode.Auto);
     }
 
     void OnMouseExit()
@@ -30,20 +30,22 @@ public class icon2Controller : MonoBehaviour
         selectionArray[1].SetActive(false);
         selectionArray[2].SetActive(true);
 
-        clicked++;
-        if (clicked == 1) clicktime = Time.time;
 
-        if (clicked > 1 && Time.time - clicktime < clickdelay)
-        {
-            clicked = 0;
-            clicktime = 0;
-            window.SetActive(true);
-            foreach (GameObject button in otherButtons)
-            {
-                button.SetActive(false);
+        if (clicked == 0){
+            clicked++;
+            clicktime = Time.time;
+        }else{
+            float currentTime = Time.time;
+            if (currentTime - clicktime < clickdelay){
+                // Double Click Detected
+                window.SetActive(true);
+                foreach (GameObject button in otherButtons)
+                {
+                    button.SetActive(false);
+                }
             }
+            clicktime = Time.time;
         }
-        else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
     }
 
     // Start is called before the first frame update

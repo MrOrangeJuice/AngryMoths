@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using Wilberforce;
+
 public class DragAndDrop_ : MonoBehaviour
 {
     public Sprite[] Levels;
-
     public GameObject EndMenu;
     public GameObject SelectedPiece;
+    public GameObject winText;
+    public GameObject successScreen;
     int OIL = 1;    
     public int PlacedPieces = 0;
+
+    public Colorblind camera;
+
     void Start()
     {
         for (int i = 0;i < 36; i++)
@@ -20,8 +26,24 @@ public class DragAndDrop_ : MonoBehaviour
         
     }
 
+    int cheatCodeIndex = 0;
+    UnityEngine.KeyCode[] cheatCode = { KeyCode.C, KeyCode.O, KeyCode.L, KeyCode.O, KeyCode.R, KeyCode.I, KeyCode.T };
+
     void Update()
     {
+
+        if (Input.GetKeyDown(cheatCode[cheatCodeIndex]))
+        {
+            cheatCodeIndex++;
+            if (cheatCodeIndex >= 7)
+            {
+                Debug.Log("CHEAT ENABLED");
+                cheatCodeIndex = 0;
+                camera.Type = 0;
+                successScreen.SetActive(true);
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -34,6 +56,10 @@ public class DragAndDrop_ : MonoBehaviour
                     SelectedPiece.GetComponent<SortingGroup>().sortingOrder = OIL;
                     OIL++;
                 }
+            }
+            else
+            {
+                return;
             }
         }
 
@@ -52,7 +78,8 @@ public class DragAndDrop_ : MonoBehaviour
         }             
         if (PlacedPieces == 36)
         {
-            //what to do when puzzle is completed
+            //winText.SetActive(true);
+            successScreen.SetActive(true);
         }
     }
 }

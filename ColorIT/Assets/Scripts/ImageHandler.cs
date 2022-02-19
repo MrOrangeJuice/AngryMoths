@@ -49,7 +49,9 @@ public class ImageHandler : MonoBehaviour
         // Update is called once per frame
     void Update()
     {
-  
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            SceneManager.LoadScene("OS_Main_Scene");
+        }
     }
   
 }

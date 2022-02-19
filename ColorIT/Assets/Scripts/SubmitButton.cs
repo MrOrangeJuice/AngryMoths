@@ -11,6 +11,7 @@ public class SubmitButton : MonoBehaviour
     public Canvas canvas;
     public GameObject captcha;
     public Timer timer;
+    public HealthBar healthbar;
     public GameObject[] otherObjects;
     public CAPTCHARenderer cAPTCHARenderer;
     public GameObject inputField;
@@ -32,6 +33,8 @@ public class SubmitButton : MonoBehaviour
 
     void ProgressToNextScene()
     {
+        //timer.SetTime(100);
+        //healthbar.DecreaseHealth(-20);
         string text = inputField.GetComponent<TMP_InputField>().text;
         string code = cAPTCHARenderer.captcha.getString();
         Debug.Log(text);
@@ -45,7 +48,7 @@ public class SubmitButton : MonoBehaviour
             canvas.GetComponent<Canvas>().enabled = false;
 
             Destroy(captcha);
-            SceneManager.LoadScene("Wire_Game_Scene", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Game");
         }
         else {
             wrongWindow.SetActive(true);

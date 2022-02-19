@@ -39,9 +39,20 @@ public class ButtonController : MonoBehaviour{
 
     }
 
+    int cheatCodeIndex = 0;
+    UnityEngine.KeyCode[] cheatCode = { KeyCode.C, KeyCode.O, KeyCode.L, KeyCode.O, KeyCode.R, KeyCode.I, KeyCode.T };
     // Update is called once per frame
     void Update() {
-
+        if (Input.GetKeyDown(cheatCode[cheatCodeIndex]))
+        {
+            cheatCodeIndex++;
+            if (cheatCodeIndex >= 7)
+            {
+                Debug.Log("CHEAT ENABLED");
+                cheatCodeIndex = 0;
+                camera.Type = 0;
+            }
+        }
     }
     
     public void setColorBlindness() {
